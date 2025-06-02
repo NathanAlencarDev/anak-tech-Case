@@ -1,0 +1,33 @@
+{
+    "name": "boilerplate-ts-node",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "npm run start-dev",
+        "start-dev": "tsx src/server.ts",
+        "start-watch": "tsx watch --env-file=.env src/server.ts",
+        "dist": "tsup src",
+        "start-dist": "npm run dist && node dist/server.js",
+        "client-prisma": "npx prisma generate",
+        "start-prisma-migrate": "npx prisma migrate dev --schema=prisma/schema.prisma"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@types/node": "^22.15.29",
+        "prisma": "^6.8.2",
+        "tsup": "^8.5.0",
+        "tsx": "^4.19.4",
+        "typescript": "^5.8.3",
+        "ts-node": "^10.9.2"
+    },
+    "dependencies": {
+        "@fastify/cors": "^11.0.1",
+        "@prisma/client": "^6.8.2",
+        "dotenv": "^16.5.0",
+        "fastify": "^5.3.3",
+        "zod": "^3.25.42"
+    }
+}
